@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="section">
+
+        <div class="container">
+            <h1>
+                <%= listTitle %>
+            </h1>
+
+
+            <ul>
+                <% for(var i=0; i < NewListItems.length;++i) { %>
+                    <li class="newListItem" class="list">
+                        <input type="checkbox">
+                        <span>
+                            <%= NewListItems[i] %>
+                        </span>
+                    </li>
+                    <% } %>
+            </ul>
+
+            <form class="form" action="/" method="post">
+                <input type="text" name="listItem" autocomplete="off" placeholder="New Item">
+                <button type="submit" name="list" value=<%=listTitle %>>+</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
